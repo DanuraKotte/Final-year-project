@@ -1,0 +1,7 @@
+.textarea-border{
+    border-bottom: 2px solid;
+}
+
+.textarea-border:focus{
+    border-bottom: blue;
+}

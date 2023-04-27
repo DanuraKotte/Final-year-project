@@ -1,0 +1,165 @@
+.banner{
+  height: 5000px;
+}
+
+.home-bg{
+  background-color: #EDDFEF;
+}
+
+.btn-1 {
+  color: white;
+  border-radius: 30px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  background-color: #4F0668;
+  cursor: pointer;
+}
+
+.btn-2 {
+  border-radius: 30px;
+  border: 1px solid transparent;
+  padding: 0.4rem 1rem;
+  font-size: 1.2em;
+  background-color: #ffffff;
+  font-weight: 500;
+  color: #4F0668;
+  cursor: pointer;
+}
+
+.bg-style{
+  background: rgba(255, 254, 254, 0.74);
+  width: 70rem;
+  height: 40.25rem;
+  border-radius: 20px;
+}
+
+.input-box{
+  background-color: rgba(65, 60, 66, 0.19);
+  border-radius: 10px;
+}
+
+
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg); 
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.bg-top{
+  background: linear-gradient(90deg, #080D26 0%, #331818 47.11%, #1E2B57 100%);
+}
+
+.bg-ins{
+  background-color: #D0C2E3;
+}
+
+.bg-footer{
+  background-color: #7B09A3;
+}
+
+
+
+.sub-btn{
+  border-radius: 30px;
+  border: 1px solid transparent;
+  
+}
+
+.box-size{
+  height: 22.5rem;
+}
+
+.box-size-2{
+  margin-top: 12.5rem;
+  height: 22.5rem;
+}
+
+.service-h{
+  font-size: 32px;
+  color: #4F0668;  ;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+}
+
+.service-p{
+  font-size: 32px;
+  font-family: 'Oswald', sans-serif;
+  
+}
+.service-flex{
+  width: 90%;
+ }
+
+ .pt-15{
+   padding-top: 9.3rem;
+  }
+  
+  .bg-info2{
+    background-color: rgba(224, 172, 233, 0.8);
+  }
+  .bg-info2:hover{
+    background: rgba(193, 236, 72, 0.8);
+  }
+  
+  .input2{
+    background-color: transparent;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+    border-color: black;
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.terms{
+  color: darkblue;
+  text-decoration: underline;
+}
+
+.terms:hover{
+  color: darkblue;
+}
+
+.text-color1{
+  color: #4F0668;
+}
+
+.text-color1:hover{
+  color: inherit;
+}
+
+.text-color2{
+  color: #AE0CC8;
+}
+
+.general-image{
+  background-image: url('../src//assets//images/generalbg.jpg');
+  background-size: cover;
+  position: relative;
+  color: white !important;
+}
+
