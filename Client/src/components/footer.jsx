@@ -25,28 +25,39 @@ function footer() {
                 <Link>help center</Link>
                 <Link to="/terms">terms & conditions</Link>
                 <Link to="/policy">privacy policy</Link>
+                <Link to="/contactus" target="_blank">
+                  Contact Us
+                </Link>
               </div>
             </div>
             <div className="col-1"></div>
           </div>
-          <div className="row pt-4">
+          <div className="row py-5">
             <div className="col-2"></div>
             <div className="col-8">
               <div className="d-flex justify-content-center gap-5">
-                <img src={fb} />
-                <img src={twitter} />
-                <img src={Ig} />
-                <img src={Linkedin} />
+                <a href="#">
+                  <img src={fb} />
+                </a>
+                <a href="#">
+                  <img src={Ig} />
+                </a>
+                <a href="#">
+                  <img className="pt-1" src={twitter} />
+                </a>
+                <a href="#">
+                  <img src={Linkedin} />
+                </a>
               </div>
             </div>
             <div className="col-2"></div>
           </div>
         </div>
-        <div
+        {/* <div
           className="text-center text-capitalize text-light w-100 mt-5 pt-1 pb-2"
-          style={{ backgroundColor: "#222021" }}>
+          style={{ backgroundColor: "#010b00" }}>
           Copyright © 2023 votely Company UK All rights reserved.
-        </div>
+        </div> */}
       </footer>
     </>
   );

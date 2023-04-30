@@ -6,34 +6,15 @@
   background-color: #EDDFEF;
 }
 
-.btn-1 {
-  color: white;
-  border-radius: 30px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 700;
-  font-family: 'Poppins', sans-serif;
-  background-color: #4F0668;
-  cursor: pointer;
-}
-
-.btn-2 {
-  border-radius: 30px;
-  border: 1px solid transparent;
-  padding: 0.4rem 1rem;
-  font-size: 1.2em;
-  background-color: #ffffff;
-  font-weight: 500;
-  color: #4F0668;
-  cursor: pointer;
-}
-
 .bg-style{
   background: rgba(255, 254, 254, 0.74);
   width: 70rem;
   height: 40.25rem;
   border-radius: 20px;
+}
+
+.bg-common{
+  background-color: #f5f5fa;
 }
 
 .input-box{
@@ -70,16 +51,6 @@
 .bg-top{
   background: linear-gradient(90deg, #080D26 0%, #331818 47.11%, #1E2B57 100%);
 }
-
-.bg-ins{
-  background-color: #D0C2E3;
-}
-
-.bg-footer{
-  background-color: #7B09A3;
-}
-
-
 
 .sub-btn{
   border-radius: 30px;

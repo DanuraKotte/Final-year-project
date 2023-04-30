@@ -5,7 +5,6 @@ import bgimage from "../assets/images/bg1.png";
 import { Link } from "react-router-dom";
 import Navigationbar from "./navbar";
 import Footer from "./footer";
-import events from "./events";
 
 function services() {
   const bgstyles = {

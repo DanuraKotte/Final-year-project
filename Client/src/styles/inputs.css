@@ -1,0 +1,38 @@
+.input-style{
+    background-color: transparent !important;
+    padding-left: 1rem;
+    border-bottom: 1px solid navy;
+    font-weight: 500;
+}
+
+.input-style:focus{
+    background-color: transparent !important;
+    padding-left: 1rem;
+    border-bottom: 3px solid orange;
+    font-weight: 600;
+}
+
+.input-style-2{
+    background-color: transparent !important;
+    padding-left: 1rem;
+    border-bottom: 1px solid navy;
+    font-weight: 500;
+}
+
+.login-input-style{
+    background-color: transparent !important;
+    padding-left: 1rem;
+    border-bottom: 1px solid navy;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 30rem !important;
+}
+
+.login-input-style:focus{
+    background-color: transparent !important;
+    padding-left: 1rem;
+    border-bottom: 2px solid orange;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 30rem !important;
+}
