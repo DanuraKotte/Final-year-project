@@ -4,7 +4,7 @@ import "../styles/inputs.css";
 import "../styles/btn-styles.css";
 import "../styles/texts.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SideBg from "../assets/images/127login.png";
 import BigLogo from "../assets/images/biglogo.png";
 import axios from "axios";
@@ -14,32 +14,36 @@ function register() {
     name: "",
     email: "",
     password: "",
-    reEnterPassword: "",
+    repassword: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    // console.log( name,value)
-    setUser({
-      ...user,
-      [name]: value,
-    });
+    setUser ((preve) => {
+        return{
+          ...preve,
+          [name] : value
+        }
+    })
   };
 
-  const registerr = () => {
-    const { name, email, password, reEnterPassword } = user;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(user);
+  
+    const { name, email, password, repassword } = user;
+  
     if (name && email && password) {
-      if (password === reEnterPassword) {
-        axios
-          .post("http://localhost:9002/register", user)
-          .then((res) => console.log(res));
-
-        // alert("posted")
+      if (password === repassword) {
+        try {
+          const response = await axios.post("http://localhost:8080/register", user);
+          alert(response.data.message);
+        } catch (error) {
+          console.error(error);
+        }
       } else {
-        alert("check the passwords");
+        alert("Check your password");
       }
-    } else {
-      alert("invalid input");
     }
   };
 
@@ -58,11 +62,15 @@ function register() {
               className="mt-4 mb-5"
               style={{ backgroundColor: "darkblue", height: "2px" }}
             />
+            <p>To get started, please register for an account</p>
             <form action="" className="my-5 w-100">
               <input
                 type="text"
                 placeholder="Oraganisation Name"
                 className="login-input-style mt-4 h-50"
+                name="name"
+                value={user.name}
+                onChange={handleChange}
                 required
               />{" "}
               <br />
@@ -70,6 +78,9 @@ function register() {
                 type="email"
                 placeholder="Enter Your Email"
                 className="login-input-style mt-4 h-50"
+                name="email"
+                value={user.email}
+                onChange={handleChange}
                 required
               />{" "}
               <br />
@@ -77,12 +88,18 @@ function register() {
                 type="password"
                 placeholder="Password"
                 className="login-input-style mt-4 h-50"
+                name="password"
+                value={user.password}
+                onChange={handleChange}
                 required
               />
               <br />
               <input
                 type="password"
                 placeholder="Re-enter Password"
+                name="repassword"
+                value={user.repassword}
+                onChange={handleChange}
                 className="login-input-style mt-4 h-50"
                 required
               />
@@ -103,7 +120,7 @@ function register() {
                 </div>
               </div>
               <Link to="/login">
-                <button className="btn-1 w-75 mt-5">Register</button>
+                <button className="btn-1 w-75 mt-5" onClick={handleSubmit}>Register</button>
               </Link>
               <div className="mt-5">
                 <span>Already have an account?</span>
@@ -119,10 +136,10 @@ function register() {
           style={bgstyles}>
           <div className="mx-auto ps-5 w-75">
             <img src={BigLogo} className="px-5" /> <br />
-            <p className="py-5">
-              Votely enables secure global voting, accessible to all. Vote
-              anytime, anywhere, and have your voice heard. Join the community
-              for democratic participation with ease.
+            <p className="py-5 text-capitalize">
+              create and manage online elections. Gather votes from anywhere.
+              Fill out the form with your details and start creating elections
+              immediately. Choose our app for successful and fair elections
             </p>
           </div>
         </div>
@@ -132,82 +149,3 @@ function register() {
 }
 
 export default register;
-
-// <div>
-//   {/* <div className="bg-style position-relative">
-//     <Form
-//       className="w-50 position-absolute top-50 start-50 translate-middle"
-//       action=""
-//       method="post">
-//       <h1 className="mb-5">Register</h1>
-//        <div>
-//         <input
-//           type="text"
-//           className="w-100 input-box px-4 py-2 mb-4 border border-0"
-//           placeholder="Username"
-//         />
-//       </div>  */}
-// <div className='bg-style position-relative'>
-//   <Form className='w-50 position-absolute top-50 start-50 translate-middle'>
-//     <h1 className='mb-5'>Register</h1>
-//     <div>
-//       <input type="text" name="name" value={user.name}  className='w-100 input-box px-4 py-2 mb-4 border border-0' placeholder='Username'  onChange={handleChange}  />
-//     </div>
-
-//       {/* <div>
-//         <input
-//           type="email"
-//           className="w-100 input-box px-4 py-2 mb-4 border border-0"
-//           placeholder="Email"
-//         />
-//       </div>
-//       <div>
-//         <input
-//           type="password"
-//           className="w-100 input-box px-4 py-2 mb-4 border border-0"
-//           placeholder="Password"
-//         />
-//       </div> */}
-//     <div>
-//       <input type="email"name="email" value={user.email}  className='w-100 input-box px-4 py-2 mb-4 border border-0' placeholder='Email' onChange={handleChange}   />
-//     </div>
-//     <div>
-//       <input type="password"name="password" value={user.password}  className='w-100 input-box px-4 py-2 mb-4 border border-0' placeholder='Password' onChange={handleChange}   />
-//     </div>
-
-//       {/* <div>
-//         <input
-//           type="password"
-//           className="w-100 input-box px-4 py-2 mb-4 border border-0"
-//           placeholder="Confirm Password"
-//         />
-//       </div> */}
-
-//       <Form.Group className="mb-3 w-25" controlId="formBasicCheckbox">
-//     <div>
-//       <input type="password" name="reEnterPassword" value={user.reEnterPassword} className='w-100 input-box px-4 py-2 mb-4 border border-0' placeholder='Re-Enter Password' onChange={handleChange}   />
-//     </div>
-//     </Form.Group>
-
-//     <Form.Group className="mb-3 w-25" controlId="formBasicCheckbox">
-//         <Form.Check type="checkbox" label="Remember me" />
-//       </Form.Group>
-
-//       <Link variant="primary" to="/login">
-//         Register
-//       </Link>
-//       <h5 className="mt-5">
-//         Have an account?{" "}
-//         <a className="ps-2" href="#">
-//           Login
-//         </a>
-//       </h5>
-//     </Form>
-//   </div>
-//     <Button variant="primary" onClick={registerr}>Register</Button>
-//     <h5 className='mt-5'>Have an account? <a className='ps-2' href="/login">Login</a></h5>
-
-//   {/* </Form> */}
-// </div>
-
-// // </div>

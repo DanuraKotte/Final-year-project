@@ -19,6 +19,15 @@
     font-weight: 500;
 }
 
+.input-style-3{
+    color: white;
+    background-color: transparent !important;
+    padding-left: 1rem;
+    border-bottom: 1px solid navy;
+    font-weight: 500;
+}
+
+
 .login-input-style{
     background-color: transparent !important;
     padding-left: 1rem;
@@ -35,4 +44,12 @@
     font-size: 1rem;
     font-weight: 500;
     width: 30rem !important;
+}
+
+.textarea-1{
+    font-size: 18px;
+    font-weight: 600;
+    height: 30vh;
+    padding: 30px;
+    border-radius: 20px;
 }

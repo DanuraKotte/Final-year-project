@@ -1,15 +1,14 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Navigationbar from "./navbar";
 import Footer from "./footer";
 
-function about() {
+function freePlan() {
   return (
     <>
       <Navigationbar />
       <div className="container" style={{ height: "32vh" }}>
         <div className="d-flex justify-content-center text-light mt-5">
-          <h1 className="pt-5">About Us</h1>
+          <h1 className="pt-5 text-capitalize">free plan</h1>
         </div>
         <div
           className="mt-4"
@@ -83,4 +82,4 @@ function about() {
   );
 }
 
-export default about;
+export default freePlan;

@@ -1,6 +1,7 @@
 import React from "react";
 import "../App.css";
 import "../styles/event.css";
+import SecondNavBar from "./secondnavbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import InviteBg from "../assets/images/invitebg.png";
 
@@ -12,6 +13,7 @@ function inviteCandidate() {
   };
   return (
     <>
+      <SecondNavBar />
       <div className="container my-5">
         <div className="row">
           <div className="col-7" style={bgstyles}></div>
@@ -60,6 +62,7 @@ function inviteCandidate() {
           </div>
         </div>
       </div>
+      <footer />
     </>
   );
 }

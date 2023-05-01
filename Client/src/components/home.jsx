@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../App.css";
+import "../styles/btn-styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ServiceImg from "../assets/images/service.png";
 import choose from "../assets/images/vote 5.png";
@@ -26,10 +28,12 @@ function home() {
               accessible from any time zone, and at a low cost. Join the Votely
               community today and have your voice heard.
             </p>
-            <button className="my-5">Get Started</button>
+            <Link to="/plans">
+              <button className="my-5 btn-3">Get Started</button>
+            </Link>
           </div>
           <div class="col-md-4 ps-2">
-            <img src={Vote} class="ps-5 pt-5" alt="Your image" />
+            <img src={Vote} class="ps-5 pt-5 floating" alt="Your image" />
           </div>
         </div>
       </div>

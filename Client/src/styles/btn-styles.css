@@ -26,3 +26,44 @@
     background-color: greenyellow;
 
   }
+
+  .btn-3 {
+    color: black;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    padding: 15px 40px 15px 40px;
+    font-size: 1.5em;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    background-color: #AD0DD6;
+    cursor: pointer;
+  }
+
+  .btn-3:hover {
+    color: black;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    padding: 15px 40px 15px 40px;
+    font-size: 1.5em;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    cursor: pointer;
+  }
+  .btn-3:hover {
+    color: black;
+    border-radius: 50px;
+    border: 1px solid #AD0DD6;
+    box-shadow: 0 0 10px 2px #AD0DD6;
+    padding: 15px 40px 15px 40px;
+    font-size: 1.5em;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    background-image: linear-gradient(to right, white, #1500ff);
+    background-size: 200% 100%;
+    background-position: left bottom;
+    transition: background-position 1s ease-out; /* Slower transition */
+    cursor: pointer;
+  }
+  

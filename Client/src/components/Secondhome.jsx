@@ -1,8 +1,9 @@
 import React from "react";
 import "../App.css";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import OrgImg from "../assets/images/orgimg.png";
-import NavigationBar from "./navbar";
+import SecondNavBar from "./secondnavbar";
 import Footer from "./footer";
 import Candidate2 from "../assets/images/candicate2.png";
 import Candidate3 from "../assets/images/candidate3.png";
@@ -10,11 +11,18 @@ import Candidate3 from "../assets/images/candidate3.png";
 function Secondhome() {
   return (
     <>
-      <NavigationBar />
+      <SecondNavBar />
       <div style={{ backgroundColor: "#f5f5fa" }}>
         <div className="container py-5">
-          <img src={OrgImg} className="mt-5" />
-          <h2>Organisation </h2>
+          <div className="d-flex justify-content-between">
+            <div>
+              <img src={OrgImg} className="mt-5" />
+              <h2>Organisation </h2>
+            </div>
+            <Link to="/createevent" className="mt-5">
+              <button className="mt-5 btn-1">Create Event</button>
+            </Link>
+          </div>
           <div
             className="my-4"
             style={{ backgroundColor: "navy", height: "2px" }}

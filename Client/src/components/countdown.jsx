@@ -5,10 +5,22 @@ const CountdownTimer = ({ targetDate }) => {
   const [remainingTime, setRemainingTime] = useState(
     calculateRemainingTime(targetDate),
   );
+  const [timerEnded, setTimerEnded] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setRemainingTime(calculateRemainingTime(targetDate));
+      const newRemainingTime = calculateRemainingTime(targetDate);
+      setRemainingTime(newRemainingTime);
+
+      if (
+        newRemainingTime.days === "" &&
+        newRemainingTime.hours === "00" &&
+        newRemainingTime.minutes === "00" &&
+        newRemainingTime.seconds === "00"
+      ) {
+        setTimerEnded(true);
+        clearInterval(timer);
+      }
     }, 1000);
 
     return () => clearInterval(timer);
@@ -22,7 +34,7 @@ const CountdownTimer = ({ targetDate }) => {
     if (remainingTime >= 24 * 60 * 60 * 1000) {
       const days = Math.floor(remainingTime / (24 * 60 * 60 * 1000));
       return {
-        days: days + " days",
+        days: days + " day(s)",
         hours: "",
         minutes: "",
         seconds: "",
@@ -44,15 +56,17 @@ const CountdownTimer = ({ targetDate }) => {
   }
 
   return (
-    <div className="py-5">
-      {remainingTime.days ? (
+    <div className="p-5">
+      {timerEnded ? (
+        <h2>00:00:00</h2>
+      ) : remainingTime.days ? (
         <h2>{remainingTime.days} left</h2>
       ) : (
-        <h1>
+        <h2>
           {remainingTime.hours}:{remainingTime.minutes}:{remainingTime.seconds}{" "}
           <br />
           <span className="fs-5 ps-3 fw-normal">Remaining </span>
-        </h1>
+        </h2>
       )}
     </div>
   );

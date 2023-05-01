@@ -6,6 +6,11 @@
   background-color: #EDDFEF;
 }
 
+.box-bg{
+  background-color: #4F0668;
+  border-radius: 25px;
+}
+
 .bg-style{
   background: rgba(255, 254, 254, 0.74);
   width: 70rem;
@@ -69,7 +74,7 @@
 
 .service-h{
   font-size: 32px;
-  color: #4F0668;  ;
+  color: #4F0668 ;
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
 }
@@ -133,4 +138,24 @@
   position: relative;
   color: white !important;
 }
+
+.floating {
+  animation-name: float;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-60px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
 

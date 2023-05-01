@@ -5,7 +5,7 @@ import { Navbar, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Logo from "../assets/images/footer-logo.png";
 
-function NavigationBar() {
+function SecondNavigationBar() {
   return (
     <>
       <Navbar className="bg-top" expand="md">
@@ -44,14 +44,7 @@ function NavigationBar() {
                 About Us
               </Link>
             </Nav>
-
-            <Link
-              to="/login"
-              type="button"
-              onClick={() => setSelectedTab("login")}
-              className="rounded-pill px-4 py-1 bg-light text-color1 mx-5">
-              Login
-            </Link>
+            Login
           </Navbar.Collapse>
         </div>
       </Navbar>
@@ -59,4 +52,4 @@ function NavigationBar() {
   );
 }
 
-export default NavigationBar;
+export default SecondNavigationBar;

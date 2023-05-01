@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Votebg from "../assets/images/votebg.png";
 import Countdown from "./countdown";
 import CheckBoxes from "../components/vote-checkbox";
 import UserImg from "../assets/images/user2.png";
+import Popup from "../popups/popup";
 
 function vote() {
+  const [ButtonPopup, setButtonPopup] = useState(false);
+
   const bgstyles = {
     backgroundImage: `url(${Votebg})`,
     backgroundRepeat: "no-repeat",
@@ -19,6 +23,15 @@ function vote() {
   };
   return (
     <>
+      {/* popoup */}
+      <Popup trigger={ButtonPopup} setTrigger={ButtonPopup}>
+        <h4>Your Vote Submission Completed</h4>
+        <h6 className="my-3">Thank you for your participation</h6>
+        <Link to="/">
+          <button className="btn-2 px-5 text-center">OK</button>
+        </Link>
+      </Popup>
+      {/* regular */}
       <div className="container">
         <div style={bgstyles} className="row mt-5 justify-content-center">
           <div className="col-2"></div>
@@ -106,7 +119,14 @@ function vote() {
                 </label>
               </div>
               <div className="d-flex w-50 text-center">
-                <button className="mx-auto btn-1 w-50 mt-4">Vote</button>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setButtonPopup(true);
+                  }}
+                  className="mx-auto btn-1 w-50 mt-4">
+                  Vote
+                </button>
               </div>
             </form>
           </div>
